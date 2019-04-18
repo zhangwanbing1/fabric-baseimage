@@ -110,6 +110,9 @@ RUN buildDeps=' \
  && cd couchdb \
  # Build the release and install into /opt
  && ./configure --disable-docs \
+ && mv bin/rebar bin/rebar-orig \
+ && wget https://github.com/rebar/rebar/wiki/rebar -O bin/rebar \
+ && chmod +x bin/rebar \
  && make release \
  && mv /usr/src/couchdb/rel/couchdb /opt/ \
  # Cleanup build detritus
