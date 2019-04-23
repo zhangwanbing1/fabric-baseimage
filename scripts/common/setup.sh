@@ -37,7 +37,7 @@ GO_VER=1.11.5
 # Install Golang binary if found in BINTARGETS
 if echo $BINTARGETS | grep -q `uname -m`; then
    cd /tmp
-   wget --quiet --no-check-certificate https://storage.googleapis.com/golang/go${GO_VER}.linux-${ARCH}.tar.gz
+   wget --quiet --no-check-certificate https://studygolang.com/dl/golang/go${GO_VER}.linux-${ARCH}.tar.gz
    tar -xvf go${GO_VER}.linux-${ARCH}.tar.gz
    mv go $GOROOT
    chmod 775 $GOROOT
@@ -47,7 +47,7 @@ else
    apt-get -y install golang-1.6
 
    cd /tmp
-   wget --quiet --no-check-certificate https://storage.googleapis.com/golang/go${GO_VER}.src.tar.gz
+   wget --quiet --no-check-certificate https://studygolang.com/dl/golang/go${GO_VER}.src.tar.gz
    tar -xzf go${GO_VER}.src.tar.gz -C /opt
 
    cd $GOROOT/src
